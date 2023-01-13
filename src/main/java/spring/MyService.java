@@ -1,11 +1,14 @@
+package spring;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class MyService {
 
-    private MyDependency myDependency;
+    private final MyDependency myDependency;
 
+    @Autowired
     public MyService(MyDependency myDependency) {
         this.myDependency = myDependency;
     }
